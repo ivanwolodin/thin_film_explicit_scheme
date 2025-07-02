@@ -23,7 +23,10 @@ void output_field(int stepTime, string which_field) {
 
     for (int x = 0; x <= Nx - 1; x++) {
         if (which_field == "h") {
-            filestr << x << " " << h[x] << endl;
+            filestr << x << " " << h_new[x] << endl;
+        }
+        if (which_field == "theta") {
+            filestr << x << " " << theta_new[x] << endl;
         }
     }
 
@@ -35,6 +38,7 @@ void output_field(int stepTime, string which_field) {
 void output_fields(int stepTime){
     if (stepTime % 1000000 == 0){
         output_field(stepTime, "h");
+        output_field(stepTime, "theta");
     }
 }
 
@@ -53,6 +57,11 @@ void dump_initial_params() {
     filestr<<"Ga= "   << Ga << endl;
     filestr<<"B= "    << B << endl;
     filestr<<"Omega= "<< Omega << endl;
+
+    filestr<<"Hamaker_constant= "<< Hamaker_constant << endl;
+    filestr<<"Ma= "<< Ma << endl;
+    filestr<<"Pr= "<< Pr << endl;
+    filestr<<"Bi= "<< Bi << endl;
 
     filestr.close();
     if (filestr.is_open()) cout << "The file has not been closed!" << endl;
