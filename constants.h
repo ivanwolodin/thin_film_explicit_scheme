@@ -3,6 +3,8 @@
 #include <vector>
 #include <cmath>
 
+int steps_number = 100000000;
+
 int Nx = 100;
 double dx = 0.1;
 double dt = 2.0 * pow(10, -8);//0.000001;
@@ -11,11 +13,11 @@ std::vector<double> h(Nx);
 
 std::vector<double> square_bracket(Nx); 
 
-std::vector<double> first_term(Nx); 
-std::vector<double> second_term(Nx); 
-std::vector<double> third_term(Nx); 
+std::vector<double> first_term_surf(Nx); 
+std::vector<double> second_term_surf(Nx); 
+std::vector<double> third_term_surf(Nx); 
 
-std::vector<double> sum_term(Nx); 
+std::vector<double> sum_term_surf(Nx); 
 
 double Hamaker_constant = 1.0 * pow(10, -5);
 double Ma = 0.0 * pow(10, -5);
