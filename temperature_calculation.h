@@ -25,26 +25,17 @@ void aux_calculation()
     f_calculation();
 
     for (int i = 1; i < Nx - 1; i++) {
-        first_term_temprt_bracket[i] = h[i] * d_dx(theta, i);
-        first_term_temprt = (1.0 / Pr) * d_dx(first_term_temprt_bracket, i);
-
-        second_term_temprt = (1.0 / (2.0 * Pr)) * pow(d_dx(h, i), 2);
-
-        third_term_temprt = (Bi / Pr) * f[i];
-        
-        // first_term_surf was alread calcltd in surface_dynamics_calculation()
-        fourth_term_temprt = (first_term_surf[i] + 0.5 * Ma * h[i] * h[i] * df_dx[i]) * df_dx[i];
-        
+        first_term_temprt_bracket[i] = h[i] * d_dx(theta, i);      
+        // square_bracket[i] was calcltd in surface_dynamics_calculation()
         dsquare_bracket_dx[i] = d_dx(square_bracket, i);
         temp_aux_vector_1[i] = (pow(h[i], 4) / 8.0) * dsquare_bracket_dx[i];
         temp_aux_vector_2[i] = (Ma / 6.0) * pow(h[i], 3) * df_dx[i];
-
     }
 }
 
 void temperature_dynamics_calculation()
-{
-    f_calculation();
+{   
+    aux_calculation();
 
     for (int i = 1; i < Nx - 1; i++) {
         first_term_temprt = (1.0 / Pr) * d_dx(first_term_temprt_bracket, i);

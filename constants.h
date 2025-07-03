@@ -44,9 +44,9 @@ double Ga = 9.8 * pow(10, -9);
 double B = 1.0 * 2;
 double Omega = 2;
 
-double Ma = 1.0 * pow(10, 2);
+double Ma = 1.0 * pow(10, -5);
 double Pr = 7.0;
-double Bi = 1.6 * pow(10, 2);
+double Bi = 1.6 * pow(10, -6);
 
 // part of Re {H} 
 double rad = ((sqrt(2.0 * Omega) / 2.0) * M_PI) / 180.0;

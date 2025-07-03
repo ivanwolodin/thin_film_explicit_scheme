@@ -22,7 +22,8 @@ void take_step() {
 void initial_distribution() {
     double length = 1.1;
     double d_x = length / (Nx - 1);
-    double k = 7.0 * 2.0 * M_PI;
+    int wave_numbers = 1;
+    double k = wave_numbers * 2.0 * M_PI;
     double argm;
     for (int i = 0; i <= Nx - 1; i++) {
         argm = i * d_x;
