@@ -8,84 +8,27 @@ The implemented system accounts for gravitational, capillary, vibrational, and t
 
 ## Governing Equations
 
-The model is described by a coupled system of evolution equations for the film thickness \(h(x,t)\) and the temperature field \(\theta(x,t)\).
+The model is described by a coupled system of evolution equations for the film thickness $h(x,t)$ and the temperature field $\theta(x,t)$.
 
 ### Film thickness evolution
 
-$$
-\frac{\partial h}{\partial t}
-=
-\frac{\partial}{\partial x}
-\left[
-\frac{h^3}{3}\frac{\partial P}{\partial x}
-+
-\frac{Ma}{2}h^2
-\left(
-\frac{\partial \theta}{\partial x}
--
-\frac{\partial h}{\partial x}
-\right)
--
-\frac{B^2\Omega^2}{2}
-\left(
-q_1h^2\left(\frac{\partial h}{\partial x}\right)^3
-+
-q_2\frac{\partial h}{\partial x}
-\frac{\partial^2 h}{\partial x^2}
-\right)
-\right].
-$$
+<p align="center">
+  <img src="1.png" alt="Film thickness evolution equation">
+</p>
 
 ### Temperature evolution
 
-$$
-\begin{aligned}
-h\frac{\partial \theta}{\partial t}
-={}&
-\frac{1}{Pr}\frac{\partial}{\partial x}
-\left(
-h\frac{\partial\theta}{\partial x}
-\right)
--\frac{1}{2Pr}
-\left(\frac{\partial h}{\partial x}\right)^2
--\frac{Bi}{Pr}(\theta-h)
-\\
-&+
-\left[
-\frac{h^3}{3}\frac{\partial P}{\partial x}
-+
-\frac{Ma}{2}h^2\frac{\partial f}{\partial x}
-\right]
-\frac{\partial f}{\partial x}
-\\
-&+
-\frac{\partial}{\partial x}
-\left[
-\frac{h^4}{8}\frac{\partial P}{\partial x}
-+
-\frac{Ma}{6}h^3\frac{\partial f}{\partial x}
-\right].
-\end{aligned}
-$$
+<p align="center">
+  <img src="2.png" alt="Temperature evolution equation">
+</p>
 
 The auxiliary functions are defined as
 
-$$
-P =
-Ga\,h
--
-Ca\frac{\partial^2 h}{\partial x^2}
-+
-\frac{B^2\Omega^2}{2}Re_h
--
-\phi,
-$$
+<p align="center">
+  <img src="3.png" alt="Auxiliary functions">
+</p>
 
-$$
-f=\theta-h.
-$$
-
-Here, \(Ga\), \(Ca\), \(Ma\), \(Bi\), and \(Pr\) are dimensionless model parameters. The functions \(Re_h\), \(q_1\), \(q_2\), and \(\phi\) represent additional terms of the averaged model.
+Here, $Ga$, $Ca$, $Ma$, $Bi$, and $Pr$ are dimensionless model parameters. The functions $Re_h$, $q_1$, $q_2$, and $\phi$ represent additional terms of the averaged model.
 
 Periodic boundary conditions are applied in the horizontal direction.
 
@@ -123,7 +66,7 @@ The repository includes Python scripts for visualizing the numerical results:
 
 ## Publications
 
-The governing equations implemented in this project originate from the following research:
+The governing equations implemented in this project originate from the following research.
 
 1. **I. Volodin and A. Alabuzhev**, "Linear Stability of Marangoni Convection in a Thin Film under Vertical Vibrations", *Microgravity Science and Technology*, **37**, 48 (2025).
 
